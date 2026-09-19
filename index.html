@@ -118,8 +118,8 @@ function japanNow(){
 function startMins(t){const m=String(t||'').match(/(\d{1,2}):(\d{2})/);return m?(+m[1])*60+(+m[2]):null}
 function endMins(t){const all=[...String(t||'').matchAll(/(\d{1,2}):(\d{2})/g)];return all.length>1?(+all[1][1])*60+(+all[1][2]):null}
 function updateCurrentActivity(days,{scroll=false}={}){
-  $('.daytab').forEach(x=>x.classList.remove('today'));
-  $('.event').forEach(x=>{x.classList.remove('current','up-next');const n=x.querySelector('.now-indicator');if(n)n.remove()});
+  $$('.daytab').forEach(x=>x.classList.remove('today'));
+  $$('.event').forEach(x=>{x.classList.remove('current','up-next');const n=x.querySelector('.now-indicator');if(n)n.remove()});
   const n=japanNow();
   if(n.year!==2026||n.month!==9||n.day<11||n.day>29)return;
   const d=days.find(x=>x.date===`${n.day} Sept`);
